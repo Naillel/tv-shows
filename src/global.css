@@ -1,0 +1,168 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0f0f0f;
+  color: #f0f0f0;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ── Buscador ────────────────────────────────────────────── */
+
+.search-form {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #f0f0f0;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #666;
+}
+
+.search-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: #f0f0f0;
+  color: #0f0f0f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #ccc;
+}
+
+/* Dropdown de resultados */
+.search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  list-style: none;
+  z-index: 10;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-result-item:hover {
+  background: #2a2a2a;
+}
+
+.search-result-item img {
+  width: 36px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.search-result-item span {
+  font-size: 0.9rem;
+}
+
+/* ── Header de la serie ──────────────────────────────────── */
+
+header {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.poster {
+  width: 105px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.show-info h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.global-rating {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 0.25rem;
+}
+
+/* ── Episodios ───────────────────────────────────────────── */
+
+.episodes {
+  display: grid;
+  place-items: start;
+  place-content: center;
+}
+
+.season {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.season-header,
+.episode {
+  --size: 2rem;
+  width: var(--size);
+  height: var(--size);
+  background: var(--color);
+  display: grid;
+  place-items: center;
+  margin: 2px;
+  border-radius: 25px;
+  corner-shape: squircle;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+
+.season-header {
+  --color: #333;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.rating-high { --color: #22c55e; }
+.rating-mid  { --color: #f59e0b; }
+.rating-low  { --color: #ef4444; }
+.rating-none { --color: #3f3f46; }
