@@ -5,16 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TV Show Ratings</title>
   <link rel="stylesheet" href="global.css">
+
+  <link rel="modulepreload" href="main.js">
+  <link rel="modulepreload" href="services/getShowById.js">
+  <link rel="modulepreload" href="services/getEpisodesBySeason.js">
+  <link rel="modulepreload" href="services/searchShows.js">
+  <link rel="modulepreload" href="render/renderHeader.js">
+  <link rel="modulepreload" href="render/renderEpisodes.js">
+  <link rel="modulepreload" href="render/renderSearchResults.js">
 </head>
 <body>
   <div class="content">
     <form class="search-form">
-      <input
-        class="search-input"
-        type="search"
-        placeholder="Buscar serie..."
-        autofocus
-      />
+      <input class="search-input" type="search" placeholder="Buscar serie..." autofocus />
       <button class="search-btn" type="submit">Buscar</button>
     </form>
 
