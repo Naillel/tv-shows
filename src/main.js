@@ -7,8 +7,6 @@ import { renderSearchResults } from "./render/renderSearchResults.js";
 
 const DEFAULT_ID = "2993";
 
-// ── Carga y renderiza una serie por ID ───────────────────────────────────────
-
 const loadShow = async (id) => {
   const [show, seasons] = await Promise.all([
     getShowById(id),
@@ -18,9 +16,6 @@ const loadShow = async (id) => {
   renderHeader(show);
   renderEpisodes(seasons);
 };
-
-// ── Buscador ─────────────────────────────────────────────────────────────────
-
 const $form  = document.querySelector(".search-form");
 const $input = document.querySelector(".search-input");
 
@@ -37,13 +32,10 @@ $form.addEventListener("submit", async (e) => {
   });
 });
 
-// Cierra el dropdown al hacer click fuera
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".search-form")) {
     document.querySelector(".search-results")?.remove();
   }
 });
-
-// ── Carga inicial ─────────────────────────────────────────────────────────────
 
 loadShow(DEFAULT_ID);
